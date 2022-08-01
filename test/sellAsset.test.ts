@@ -21,8 +21,6 @@ test('test asset selling', async () => {
   let mgaBalanceDec = 0;
   if (balance) {
     mgaBalanceDec = Number(balance[0].balance.free.toString(10));
-    // mangata.sellAsset();
-    // mangata.getOwnedTokens();
     console.log(
       `Your MGA Balance: ${mgaBalanceDec}`
     );
@@ -32,6 +30,9 @@ test('test asset selling', async () => {
   expect(mgaBalanceDec).toBeGreaterThan(0);
   //mangata.calculateSellPrice
   let sellAmount = new BN(0.0001);
+  //figure out how to sign the transaction
   let sellAsset = await mangata.sellAsset("5DeztabhWJCNQggjtKJGK5BqDV3kVR3okGjbWJ2VU6Ly3gDH", "0", "4", sellAmount, sellAmount);
   expect(sellAsset).toEqual(0);
+
+  //check outcome
 });
